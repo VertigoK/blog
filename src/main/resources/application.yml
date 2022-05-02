@@ -6,9 +6,9 @@ spring:
     username: root
     password: 12345
 #    (2) AWS RDS에 연결할 때 설정
-    url: jdbc:mysql://{AWS_endpoint}:3306/{DB_name}?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
-    username: xxxxx
-    password: xxxxxxxxxx
+#    url: jdbc:mysql://{AWS_endpoint}:3306/{DB_name}?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+#    username: xxxxx
+#    password: xxxxxxxxxx
   jpa:
     hibernate:
       ddl-auto: update

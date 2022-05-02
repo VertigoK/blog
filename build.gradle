@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'uniflow'
+group = 'kevin.study'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 

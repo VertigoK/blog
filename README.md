@@ -1,4 +1,4 @@
-## **Blog**
+## **Blog Project**
 ### **Spring Boot/Security/Validation/Data JPA, MySQL/AWS RDS, Thymeleaf, Bootstrap, jQuery, Summernote**
 
 * Simple blog

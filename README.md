@@ -2,7 +2,7 @@
 ### **Spring Boot/Security/Validation/Data JPA, MySQL/AWS RDS, Thymeleaf, Bootstrap, jQuery, Summernote**
 
 * Simple blog
-* Sign up - Spring Validation including the duplicate user validation which is for both in real time and on submission 
+* Sign up - Spring Validation including a duplicate user validation which is for both in real time and on submission 
 * Log in - Spring Security
 * Layout - Thymeleaf Layout
 * Database - MySQL or AWS RDS

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<!--Page Content-->
+<th:block layout:fragment="contents">
+    <div class="container">
+        <div>
+            <div>글번호: <i th:text="${board.id}" id="boardId"></i></div>
+            <div>작성자: <i th:text="${board.user.username}"></i></div>
+        </div>
+        <br>
+        <div>
+            <h3 th:text="${board.title}"></h3>
+        </div>
+        <hr>
+        <div>
+            <div th:utext="${board.content}"></div>
+        </div>
+        <hr>
+        <!-- username 확인 방법-->
+        <!-- <p th:text="${board.user.username}">board username appears</p>-->
+        <!-- <p th:text="${#authentication.name}">logged-in username appears</p>-->
+        <!-- <p sec:authentication="name">logged-in username appears</p>-->
+        <div>
+            <button class="btn btn-secondary btn-sm" onclick="location.href='/'">Back</button>
+            <a th:if="${board.user.username eq #authentication.name}" th:href="'/board/'+${board.id}+'/updateForm'" class="btn btn-warning btn-sm">Update</a>
+            <button th:if="${board.user.username eq #authentication.name}" class="btn btn-danger btn-sm" id="btn-delete">Delete</button>
+        </div>
+        <br>
+        <!-- 쓰기가 허용된 사용자만 (ADMIN, USERRW) 댓글 작성 가능 -->
+        <div sec:authorize="hasAnyRole('ADMIN','USERRW')" class="card">
+            <form>
+                <input type="hidden" id="board-id" th:value="${board.id}">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <textarea id="reply-content" class="form-control" rows="1" placeholder="댓글을 입력하세요."></textarea>
+                    </li>
+                    <li class="list-group-item">
+                        <button id="btn-save-reply" type="button" class="btn btn-primary btn-sm float-right">Submit</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <br>
+        <!-- 댓글 보여주기-->
+        <div class="card" style="font-size:15px;">
+            <div class="card-header"><strong>댓글</strong></div>
+            <ul id="reply-box" class="list-group" th:each="reply: ${board.replyList}">
+                <li th:id="'reply-' + ${reply.id}" class="list-group-item d-flex justify-content-between">
+                    <div th:text="${reply.content}"></div>
+                    <div class="d-flex">
+                        <span class="mr-1">작성자:&nbsp;</span>
+                        <div class="mr-1" th:text="${reply.user.username}"></div><span>&nbsp;&nbsp;</span>
+                        <span th:if="${reply.user.username eq #authentication.name}">
+                            <button th:onclick="|deleteReply('${board.id}', '${reply.id}')|" class="badge bg-danger">삭제</button>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" th:src="@{/js/board.js}"></script>
+</th:block>
+</html>

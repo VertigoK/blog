@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<!--Page Content-->
+<th:block layout:fragment="contents">
+    <!-- 1. 인증(로그인) 상태가 아닐 경우 로그인 입력 화면 보여줌-->
+    <span sec:authorize="isAnonymous()">
+        <div class="container">
+            <form action="/auth/login" method="post">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter password">
+                </div>
+<!--                <div class="form-group form-check">-->
+<!--                    <label class="form-check-label">-->
+<!--                        <input type="checkbox" id="rememberMe" name="rememberMe" class="form-check-input">remember-->
+<!--                    </label>-->
+<!--                </div>-->
+                <br>
+                <button type="submit" class="btn btn-primary btn-sm">LogIn</button>
+            </form>
+        </div>
+    </span>
+    <!-- 2. 인증(로그인) 상태일 경우 홈화면으로 즉시 이동시킴-->
+    <span sec:authorize="isAuthenticated()">
+        <meta http-equiv="refresh" content="0;url=/">
+    </span>
+</th:block>
+</html>

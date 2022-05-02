@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<!-- Common Header -->
+<th:block th:fragment="headerFragment">
+<!--    ??????????????????-->
+<!--    <sec:authorize access="isAuthenticated()">-->
+<!--        <sec:authentication property="principal" var="principal"/>-->
+<!--    </sec:authorize>-->
+    <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark">
+        <a th:href="@{/}" class="navbar-brand ms-2">
+            <img src="/image/VertigoK.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+        </a>
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <!-- 익명의 사용자 -->
+            <ul sec:authorize="isAnonymous()" class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link ms-2" th:href="@{/auth/loginForm}">LogIn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ms-2" th:href="@{/auth/signupForm}">SignUp</a>
+                </li>
+            </ul>
+
+            <!-- 인증된 사용자 -->
+            <ul sec:authorize="isAuthenticated()" class="navbar-nav ms-auto">
+                <!-- 쓰기가 허용된 사용자 (ADMIN, USERRW) -->
+                <li sec:authorize="hasAnyRole('ADMIN','USERRW')" class="nav-item">
+                    <a class="nav-link ms-2" th:href="@{/board/writeForm}">Write</a>
+                </li>
+                <!-- 관리자 (ADMIN) -->
+                <li sec:authorize="hasRole('ADMIN')" class="nav-item">
+                    <a class="nav-link ms-2" th:href="@{/admin/userList}">Admin</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ms-2" th:href="@{/user/updateForm}"><span sec:authentication="name"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ms-2" th:href="@{/logout}">LogOut</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</th:block>
+</html>

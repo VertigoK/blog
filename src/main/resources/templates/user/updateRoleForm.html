@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<!-- Page Content -->
+<th:block layout:fragment="contents">
+    <div class="container">
+        <form>
+            <input type="hidden" id="userId" th:value="${updateUser.getId()}">
+            <input type="hidden" id="password" th:value="${updateUser.getPassword()}">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" th:value="${updateUser.getUsername()}" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" th:value="${updateUser.getEmail()}" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label for="currentRole">현재 권한:</label>
+                <input type="text" id="currentRole" name="currentRole" th:value="${updateUser.getRole()}" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label for="newRole">변경 권한:</label>
+                <select id="newRole" class="form-control">
+                    <option selected th:value="${updateUser.getRole()}">Choose...</option>
+                    <option>USERR</option>
+                    <option>USERRW</option>
+                </select>
+            </div>
+        </form>
+        <div>
+            <button class="btn btn-secondary btn-sm" onclick="history.back()">Back</button>
+            <button id="btn-update-role" class="btn btn-warning btn-sm">Update</button>
+        </div>
+    </div>
+    <script th:src="@{/js/user.js}"></script>
+</th:block>
+</html>

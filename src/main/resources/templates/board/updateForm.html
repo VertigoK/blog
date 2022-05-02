@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<!--Page Content-->
+<th:block layout:fragment="contents">
+    <div class="container">
+        <form>
+            <input type="hidden" id="boardId" th:value="${board.id}">
+            <div class="form-group">
+                <input type="text" id="title" name="title" class="form-control" th:value="${board.title}">
+            </div>
+            <div class="form-group">
+                <textarea id="content" name="content" class="form-control" th:utext="${board.content}"></textarea>
+            </div>
+        </form>
+        <div th:if="${board.user.username eq #authentication.name}">
+            <button class="btn btn-secondary btn-sm" onclick="history.back()">Back</button>
+            <button id="btn-update" class="btn btn-primary btn-sm">Submit</button>
+        </div>
+    </div>
+    <script th:src="@{/js/board.js}"></script>
+</th:block>
+</html>

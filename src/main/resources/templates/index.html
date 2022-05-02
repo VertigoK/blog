@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<!--Page Content-->
+<th:block layout:fragment="contents">
+    <div class="container px-4 px-lg-5">
+        <span th:each="board: ${boardList}">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-preview">
+                        <a th:href="'/board/'+${board.id}">
+                            <h2 class="post-title" th:text="${board.title}"></h2>
+                        </a>
+                        <p class="post-meta">
+                            <!-- 정상적으로 timezone이 설정되어 있을 경우 사용-->
+                            <span th:text="${#temporals.format(board.createdDateTime, 'yyyy-MM-dd HH:mm')}"></span>
+                            <!-- AWS RDS의 timezone은 Asia/Seoul로 설정했지만 EC2의 timezone이 아무래도 UTC 그대로인 것 같아 아래 코드 사용-->
+<!--                            <span th:text="${#temporals.format(board.createdDateTime.plusHours(9), 'yyyy-MM-dd HH:mm')}"></span>-->
+                            &ensp;posted by
+                            <strong><span th:text="${board.user.username}"></span></strong>
+                        </p>
+                        <hr class="my-4"/>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </div>
+</th:block>
+</html>

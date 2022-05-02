@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<!-- Page Content -->
+<th:block layout:fragment="contents">
+    <div class="container">
+        <!--        <span th:each="user: ${users}">-->
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">권한</th>
+                <th scope="col">가입일</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user: ${userList}">
+                <th scope="col"><a th:href="@{/admin/updateUser(username=${user.username})}"><span th:text="${user.username}"></span></a></th>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.role}"></td>
+                <!-- AWS RDS의 timezone은 Asia/Seoul로 설정했지만 EC2의 timezone이 아무래도 UTC 그대로인 것 같아 아래 코드 사용-->
+                <td th:text="${#temporals.format(user.createdDateTime.plusHours(9), 'yyyy-MM-dd')}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div th:align="center">권한을 변경하려면 Username을 클릭하세요.</div>
+</th:block>
+</html>

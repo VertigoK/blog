@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    (1) localhost에 연결할 때 설정
+    url: jdbc:mysql://localhost:3306/blog?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+    username: root
+    password: 12345
+#    (2) AWS RDS에 연결할 때 설정
+    url: jdbc:mysql://{AWS_endpoint}:3306/{DB_name}?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+    username: xxxxx
+    password: xxxxxxxxxx
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true

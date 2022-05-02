@@ -1,4 +1,4 @@
-### **<ins>Blog<ins>**
+# **Blog**
 ### **Spring Boot/Security/Validation/Data JPA, MySQL/AWS RDS, Thymeleaf, Bootstrap, jQuery**
 
 * Simple blog

@@ -6,3 +6,5 @@
 * Log in - Spring Security
 * Layout - Thymeleaf Layout
 * Database - MySQL or AWS RDS
+
+* Edit the database to make a user "ADMIN"

@@ -1,12 +1,12 @@
-package uniflow.blog.controller;
+package kevin.study.blog.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import uniflow.blog.domain.User;
-import uniflow.blog.dto.ResponseDto;
-import uniflow.blog.dto.UserDto;
-import uniflow.blog.service.UserService;
+import kevin.study.blog.domain.User;
+import kevin.study.blog.dto.ResponseDto;
+import kevin.study.blog.dto.UserDto;
+import kevin.study.blog.service.UserService;
 
 import javax.validation.Valid;
 

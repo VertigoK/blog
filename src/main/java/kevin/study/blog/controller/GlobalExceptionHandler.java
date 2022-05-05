@@ -1,4 +1,4 @@
-package uniflow.blog.controller;
+package kevin.study.blog.controller;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

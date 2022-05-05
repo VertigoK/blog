@@ -1,4 +1,4 @@
-package uniflow.blog.dto;
+package kevin.study.blog.dto;
 
 import lombok.*;
 

@@ -1,14 +1,14 @@
-package uniflow.blog.controller;
+package kevin.study.blog.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
-import uniflow.blog.config.auth.PrincipalDetail;
-import uniflow.blog.domain.Board;
-import uniflow.blog.domain.Reply;
-import uniflow.blog.dto.ResponseDto;
-import uniflow.blog.service.BoardService;
+import kevin.study.blog.config.auth.PrincipalDetail;
+import kevin.study.blog.domain.Board;
+import kevin.study.blog.domain.Reply;
+import kevin.study.blog.dto.ResponseDto;
+import kevin.study.blog.service.BoardService;
 
 @RestController
 public class BoardApiController {

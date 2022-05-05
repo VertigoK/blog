@@ -1,12 +1,12 @@
-package uniflow.blog.config.auth;
+package kevin.study.blog.config.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import uniflow.blog.domain.User;
-import uniflow.blog.repository.UserRepository;
+import kevin.study.blog.domain.User;
+import kevin.study.blog.repository.UserRepository;
 
 @Service
 public class PrincipalDetailService implements UserDetailsService {

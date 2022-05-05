@@ -1,10 +1,10 @@
-package uniflow.blog.config.auth;
+package kevin.study.blog.config.auth;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import uniflow.blog.domain.User;
+import kevin.study.blog.domain.User;
 
 import java.util.ArrayList;
 import java.util.Collection;

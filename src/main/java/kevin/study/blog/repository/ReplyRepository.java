@@ -1,7 +1,7 @@
-package uniflow.blog.repository;
+package kevin.study.blog.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import uniflow.blog.domain.Reply;
+import kevin.study.blog.domain.Reply;
 
 public interface ReplyRepository extends JpaRepository<Reply, Integer> {
 

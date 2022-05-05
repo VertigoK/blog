@@ -1,15 +1,15 @@
-package uniflow.blog.service;
+package kevin.study.blog.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import uniflow.blog.domain.Board;
-import uniflow.blog.domain.Reply;
-import uniflow.blog.domain.User;
-import uniflow.blog.repository.BoardRepository;
-import uniflow.blog.repository.ReplyRepository;
+import kevin.study.blog.domain.Board;
+import kevin.study.blog.domain.Reply;
+import kevin.study.blog.domain.User;
+import kevin.study.blog.repository.BoardRepository;
+import kevin.study.blog.repository.ReplyRepository;
 
 @Service
 public class BoardService {

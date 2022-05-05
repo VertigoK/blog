@@ -1,4 +1,4 @@
-package uniflow.blog.controller;
+package kevin.study.blog.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import uniflow.blog.service.BoardService;
+import kevin.study.blog.service.BoardService;
 
 @Controller
 public class BoardController {

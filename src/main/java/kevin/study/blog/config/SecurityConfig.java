@@ -1,4 +1,4 @@
-package uniflow.blog.config;
+package kevin.study.blog.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import uniflow.blog.config.auth.PrincipalDetailService;
+import kevin.study.blog.config.auth.PrincipalDetailService;
 
 @Configuration
 @EnableWebSecurity

@@ -1,4 +1,4 @@
-package uniflow.blog;
+package kevin.study.blog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

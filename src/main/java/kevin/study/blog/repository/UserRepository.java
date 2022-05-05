@@ -1,7 +1,7 @@
-package uniflow.blog.repository;
+package kevin.study.blog.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import uniflow.blog.domain.User;
+import kevin.study.blog.domain.User;
 
 import java.util.Optional;
 

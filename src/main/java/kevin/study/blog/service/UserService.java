@@ -1,13 +1,13 @@
-package uniflow.blog.service;
+package kevin.study.blog.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import uniflow.blog.domain.Role;
-import uniflow.blog.domain.User;
-import uniflow.blog.dto.UserDto;
-import uniflow.blog.repository.UserRepository;
+import kevin.study.blog.domain.Role;
+import kevin.study.blog.domain.User;
+import kevin.study.blog.dto.UserDto;
+import kevin.study.blog.repository.UserRepository;
 
 import java.util.List;
 

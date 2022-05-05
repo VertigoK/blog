@@ -1,4 +1,4 @@
-package uniflow.blog.domain;
+package kevin.study.blog.domain;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

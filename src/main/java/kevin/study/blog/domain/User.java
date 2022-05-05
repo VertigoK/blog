@@ -1,4 +1,4 @@
-package uniflow.blog.domain;
+package kevin.study.blog.domain;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
